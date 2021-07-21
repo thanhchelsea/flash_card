@@ -6,8 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class BottomSheetOptionsComponent extends StatelessWidget {
-  BottomSheetController controllerBottom =
-  Get.put<BottomSheetController>(BottomSheetController());
+  BottomSheetController controllerBottom = Get.put<BottomSheetController>(BottomSheetController());
   FlashcardController flashcardController = Get.find();
   Widget topBottomSheet() {
     return Container(
@@ -17,9 +16,7 @@ class BottomSheetOptionsComponent extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 15),
             width: 60,
             height: 5,
-            decoration: BoxDecoration(
-                color: Colors.blueGrey.withOpacity(0.6),
-                borderRadius: BorderRadius.circular(10)),
+            decoration: BoxDecoration(color: Colors.blueGrey.withOpacity(0.6), borderRadius: BorderRadius.circular(10)),
           ),
           SizedBox(height: 10),
           Container(
@@ -52,8 +49,7 @@ class BottomSheetOptionsComponent extends StatelessWidget {
                       title: Icon(
                         FontAwesomeIcons.random,
                         size: 20,
-                        color:
-                            controller.isRandomCard.value ? Colors.amber : null,
+                        color: controller.isRandomCard.value ? Colors.amber : null,
                       ),
                       onTap: () {
                         controller.changeIsRandomCard();
@@ -66,8 +62,7 @@ class BottomSheetOptionsComponent extends StatelessWidget {
                       title: Icon(
                         FontAwesomeIcons.volumeUp,
                         size: 20,
-                        color:
-                            controller.isPronounce.value ? Colors.amber : null,
+                        color: controller.isPronounce.value ? Colors.amber : null,
                       ),
                       onTap: () {
                         controller.changeIsPronounce();
@@ -171,57 +166,51 @@ class BottomSheetOptionsComponent extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  InkWell(
-                    onTap: () {
-                      controller.changeIsWordSelect(true);
-                      flashcardController.changeIsShowShowWordOnFontCard(true);
-                    },
-                    child: Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 40),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: controller.isWordSelect.value
-                                ? Colors.amber
-                                : Colors.black12,
-                            width: 2),
-                      ),
-                      child: Text(
-                        "Thuật ngữ",
-                        style: TextStyle(
-                          color: !controller.isWordSelect.value
-                              ? Colors.black45
-                              : null,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        controller.changeIsWordSelect(true);
+                        flashcardController.changeIsShowShowWordOnFontCard(true);
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: controller.isWordSelect.value ? Colors.amber : Colors.black12, width: 2),
+                        ),
+                        child: Text(
+                          "Thuật ngữ",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: !controller.isWordSelect.value ? Colors.black45 : null,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
                   ),
                   SizedBox(width: 10),
-                  InkWell(
-                    onTap: () {
-                      controller.changeIsWordSelect(false);
-                      flashcardController.changeIsShowShowWordOnFontCard(false);
-                    },
-                    child: Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 40),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: !controller.isWordSelect.value
-                                ? Colors.amber
-                                : Colors.black12,
-                            width: 2),
-                      ),
-                      child: Text(
-                        "Định nghĩa",
-                        style: TextStyle(
-                          color: controller.isWordSelect.value
-                              ? Colors.black45
-                              : null,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        controller.changeIsWordSelect(false);
+                        flashcardController.changeIsShowShowWordOnFontCard(false);
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: !controller.isWordSelect.value ? Colors.amber : Colors.black12, width: 2),
+                        ),
+                        child: Text(
+                          "Định nghĩa",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: controller.isWordSelect.value ? Colors.black45 : null,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),

@@ -7,5 +7,4 @@ class FlashcardBinding extends Bindings{
   void dependencies() {
     Get.put<FlashcardController>(FlashcardController(),);
   }
-
 }
