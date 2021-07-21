@@ -58,30 +58,30 @@ class BottomSheetUserGuildCustom extends StatelessWidget {
           topRight: Radius.circular(16),
         ),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
-            width: 60,
-            height: 5,
-            decoration: BoxDecoration(
-                color: Colors.blueGrey.withOpacity(0.6),
-                borderRadius: BorderRadius.circular(10)),
-          ),
-          SizedBox(height: 10),
-          Container(
-            child: Text(
-              "Điều hướng hỏi nhanh",
-              style: TextStyle(
-                fontSize: 22,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 15),
+              width: 60,
+              height: 5,
+              decoration: BoxDecoration(
+                  color: Colors.blueGrey.withOpacity(0.6),
+                  borderRadius: BorderRadius.circular(10)),
+            ),
+            SizedBox(height: 10),
+            Container(
+              child: Text(
+                "Điều hướng hỏi nhanh",
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          Expanded(
-            child: Column(
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 itemBottomSheet(
@@ -101,18 +101,18 @@ class BottomSheetUserGuildCustom extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(bottom: 20),
-            child: ItemButtonProgess(
-              title: "OK",
-              onTap: () {
-               Get.back();
-              },
-              backGroundColor: Colors.cyan,
-            ),
-          )
-        ],
+            Container(
+              padding: EdgeInsets.only(bottom: 20),
+              child: ItemButtonProgess(
+                title: "OK",
+                onTap: () {
+                 Get.back();
+                },
+                backGroundColor: Colors.cyan,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
